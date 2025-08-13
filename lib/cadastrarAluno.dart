@@ -6,7 +6,6 @@ class Aluno {
   String email;
   String curso;
 
-  
   Aluno({
     required this.nome,
     required this.matricula,
@@ -29,8 +28,10 @@ class Aluno {
 class SistemaAlunos {
   List<Aluno> alunos = [];
 
-  void cadastrarAluno(Aluno aluno) {
-    bool jaExiste = alunos.any((a) => a.matricula == aluno.matricula || a.cpf == aluno.cpf);
+  cadastrarAluno(Aluno aluno) {
+    bool jaExiste = alunos.any(
+      (a) => a.matricula == aluno.matricula || a.cpf == aluno.cpf,
+    );
 
     if (jaExiste) {
       print("⚠️Aluno já registrado com essa matrícula ou CPF.⚠️");
