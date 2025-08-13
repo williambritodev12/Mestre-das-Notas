@@ -1,5 +1,6 @@
 // lib/gerenciador.dart
 
+
 import 'dart:io';
 import 'package:mysql1/mysql1.dart';
 

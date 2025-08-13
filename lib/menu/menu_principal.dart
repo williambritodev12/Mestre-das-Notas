@@ -1,4 +1,3 @@
-// lib/menu/menu_principal.dart
 
 import 'dart:io';
 import 'package:mestre_das_notas/gerenciador.dart';

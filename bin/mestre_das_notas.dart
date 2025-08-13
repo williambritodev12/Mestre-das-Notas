@@ -1,15 +1,25 @@
 // bin/mestre_das_notas.dart
 
+
+import '../lib/menu/menu_principal.dart';
+
+void main() {
+  menuPrincipal();
+}
+/*
 import 'dart:io';
 import 'package:mysql1/mysql1.dart';
 import 'package:mestre_das_notas/gerenciador.dart';
 import 'package:mestre_das_notas/menu/menu_principal.dart';
 
+import '../lib/gerenciador.dart';
+import '../lib/menu/menu_principal.dart';
+
 void main() async {
   // 1. Estabelecer a conexão com o banco de dados
   final conn = await MySqlConnection.connect(
     ConnectionSettings(
-      host: 'localhost',
+      host: '10.21.1.109',
       port: 3306,
       user: 'root',
       db: 'mestre_das_notas',
@@ -29,3 +39,4 @@ void main() async {
   await conn.close();
   print('✅ Conexão com o banco de dados encerrada.');
 }
+*/

@@ -1,3 +1,6 @@
+
+import 'db_connection.dart';
+
 class Aluno {
   String nome;
   String matricula;
@@ -23,6 +26,48 @@ class Aluno {
     print('Email: $email');
     print('Curso: $curso');
   }
+
+  void adicionarDisciplina(String disciplina, double nota) {}
+}
+
+
+Future<void> cadastrarAluno(Aluno aluno) async {
+  final conn = await DbConnection.conectar();
+  try {
+    var result = await conn.query(
+      'INSERT INTO alunos (nome) VALUES (?)',
+      [aluno.nome],
+    );
+    print('Aluno cadastrado com ID: ${result.insertId}');
+  } catch (e) {
+    print('Erro ao cadastrar aluno: $e');
+  } finally {
+    await conn.close();
+  }
+}
+/*
+class SistemaNotas {
+  List<Aluno> alunos = [];
+
+  void cadastrarAluno() {
+    print('\n--- CADASTRAR ALUNO ---');
+    print('Digite o nome do aluno:');
+    String nome = stdin.readLineSync()?.trim() ?? '';
+
+    if (nome.isEmpty) {
+      print('Nome do aluno não pode ser vazio.');
+      return;
+    }
+
+    if (alunos.any((a) => a.nome.toLowerCase() == nome.toLowerCase())) {
+      print('Aluno já cadastrado.');
+      return;
+    }
+
+    alunos.add(Aluno(nome));
+    print('Aluno cadastrado com sucesso!');
+  }
+
 }
 
 class SistemaAlunos {
@@ -41,3 +86,4 @@ class SistemaAlunos {
     }
   }
 }
+*/
